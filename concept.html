@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Concept | Elevare</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+body{font-family:Inter;background:#f6f6f4;color:#1a1a1a;margin:0}
+.wrapper{max-width:1100px;margin:auto;padding:140px 40px}
+h1{font-family:Playfair Display;font-size:44px;margin-bottom:30px}
+p{line-height:1.8;margin-bottom:25px}
+</style>
+</head>
+<body>
+
+<div class="wrapper">
+
+<h1 data-hu="Strukturált Luxus Fejlesztési Stratégia"
+data-en="Structured Luxury Development Strategy"></h1>
+
+<p data-hu="Az Elevare Properties olyan limitált, maximum 6 lakásos prémium fejlesztéseket hoz létre, amelyek mesterségesen alacsonyan tartott kínálattal biztosítják az exkluzivitást és a másodpiaci prémium árazást."
+data-en="Elevare Properties develops boutique residences limited to six units, strategically maintaining scarcity to support premium resale positioning."></p>
+
+<p data-hu="A magyarországi indulás stabil alapot biztosít, majd a brand nemzetközi szinten skálázható mediterrán és kiemelt vízparti lokációk felé."
+data-en="The Hungarian launch establishes a stable foundation before international expansion toward Mediterranean and prime coastal markets."></p>
+
+<p data-hu="A credit alapú tulajdonosi csere rendszer hosszú távon globális hálózatot épít."
+data-en="The credit-based ownership exchange model builds a long-term global network effect."></p>
+
+</div>
+
+<script>
+function setLang(lang){localStorage.setItem("lang",lang);applyLang();}
+function applyLang(){let lang=localStorage.getItem("lang")||"hu";document.querySelectorAll("[data-hu]").forEach(el=>{el.innerHTML=el.getAttribute("data-"+lang);});}
+document.addEventListener("DOMContentLoaded",applyLang);
+</script>
+
+</body>
+</html>
