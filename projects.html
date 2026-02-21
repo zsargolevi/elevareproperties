@@ -3,24 +3,70 @@
 <head>
 <meta charset="UTF-8">
 <title>Projects | Elevare</title>
-<style>
-body{margin:0;font-family:Arial;background:#f6f6f4}
-.wrapper{max-width:1200px;margin:auto;padding:120px 40px}
-.slider{overflow:hidden;position:relative}
-.slides{display:flex;transition:transform 0.8s ease}
-.slide{min-width:100%}
-.slide img{width:100%;height:550px;object-fit:cover;border-radius:12px}
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
 
-.marquee{overflow:hidden;margin-top:60px}
-.track{display:flex;animation:scroll 45s linear infinite}
-.track img{height:240px;margin-right:20px;border-radius:8px}
-@keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+<style>
+body{margin:0;font-family:Inter;background:#0b0b0b;color:white;}
+.container{max-width:1200px;margin:auto;padding:0 40px;}
+
+header{position:fixed;width:100%;background:rgba(0,0,0,0.9);padding:20px 40px;border-bottom:1px solid #1f1f1f;z-index:1000;}
+.header-inner{display:flex;justify-content:space-between;align-items:center;max-width:1300px;margin:auto;}
+.logo img{height:125px;}
+nav{display:flex;gap:35px;align-items:center;}
+nav a{text-decoration:none;color:#ddd;}
+
+.sub-hero{
+margin-top:160px;
+height:320px;
+background:url('hero.jpg') center/cover no-repeat;
+position:relative;
+}
+.sub-hero::after{
+content:'';
+position:absolute;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.75);
+backdrop-filter:blur(6px);
+}
+
+section{padding:120px 0;}
+
+.slider{overflow:hidden;position:relative;}
+.slides{display:flex;transition:transform 0.8s ease;}
+.slide{min-width:100%;}
+.slide img{width:100%;height:520px;object-fit:cover;border-radius:12px;}
+
+.marquee{overflow:hidden;margin-top:80px;}
+.track{display:flex;animation:scroll 50s linear infinite;}
+.track img{height:240px;margin-right:20px;border-radius:8px;}
+
+@keyframes scroll{
+0%{transform:translateX(0)}
+100%{transform:translateX(-50%)}
+}
+
+footer{padding:60px;text-align:center;border-top:1px solid #1f1f1f;color:#777;}
 </style>
 </head>
 <body>
 
-<div class="wrapper">
-<h1>Developments</h1>
+<header>
+<div class="header-inner">
+<a href="index.html" class="logo"><img src="logo.png"></a>
+<nav>
+<a href="concept.html">Concept</a>
+<a href="projects.html">Projects</a>
+<a href="investment.html">Investment</a>
+<a href="investor.html">Investor</a>
+</nav>
+</div>
+</header>
+
+<div class="sub-hero"></div>
+
+<section class="container">
+<h1 style="font-family:Playfair Display;font-size:40px;">Developments</h1>
 
 <div class="slider">
 <div class="slides" id="slides">
@@ -39,13 +85,15 @@ body{margin:0;font-family:Arial;background:#f6f6f4}
 <img src="https://images.unsplash.com/photo-1494526585095-c41746248156">
 <img src="https://images.unsplash.com/photo-1502672023488-70e25813eb80">
 <img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7">
-<img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb">
-<img src="https://images.unsplash.com/photo-1494526585095-c41746248156">
-<img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511">
+<img src="hero.jpg">
 </div>
 </div>
 
-</div>
+</section>
+
+<footer>
+© 2026 Elevare Properties
+</footer>
 
 <script>
 let i=0;
