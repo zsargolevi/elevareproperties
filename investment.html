@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Investment | Elevare</title>
+<style>
+body{font-family:Arial;background:#f6f6f4;padding:120px}
+input{padding:10px;margin:10px 0;width:300px}
+button{padding:12px 25px;background:#c5a46d;border:none}
+</style>
+</head>
+<body>
+
+<h1>Investment Calculator</h1>
+
+<label>Investment (€)</label><br>
+<input type="number" id="inv"><br>
+
+<label>Annual Growth (%)</label><br>
+<input type="number" id="rate"><br>
+
+<label>Years</label><br>
+<input type="number" id="years"><br>
+
+<button onclick="calc()">Calculate</button>
+
+<p id="out"></p>
+
+<script>
+function calc(){
+let inv=parseFloat(inv.value);
+let rate=parseFloat(rate.value)/100;
+let years=parseFloat(years.value);
+let future=inv*Math.pow((1+rate),years);
+let profit=future-inv;
+document.getElementById("out").innerHTML=
+"Future Value: €"+future.toFixed(2)+"<br>Profit: €"+profit.toFixed(2);
+}
+</script>
+
+</body>
+</html>
