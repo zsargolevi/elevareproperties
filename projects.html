@@ -1,1 +1,59 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<title>Projects | Elevare</title>
+<style>
+body{margin:0;font-family:Arial;background:#f6f6f4}
+.wrapper{max-width:1200px;margin:auto;padding:120px 40px}
+.slider{overflow:hidden;position:relative}
+.slides{display:flex;transition:transform 0.8s ease}
+.slide{min-width:100%}
+.slide img{width:100%;height:550px;object-fit:cover;border-radius:12px}
 
+.marquee{overflow:hidden;margin-top:60px}
+.track{display:flex;animation:scroll 45s linear infinite}
+.track img{height:240px;margin-right:20px;border-radius:8px}
+@keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+</style>
+</head>
+<body>
+
+<div class="wrapper">
+<h1>Developments</h1>
+
+<div class="slider">
+<div class="slides" id="slides">
+<div class="slide"><img src="hero.jpg"></div>
+<div class="slide"><img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511"></div>
+<div class="slide"><img src="https://images.unsplash.com/photo-1499793983690-e29da59ef1c2"></div>
+</div>
+</div>
+
+<div class="marquee">
+<div class="track">
+<img src="hero.jpg">
+<img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae">
+<img src="https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6">
+<img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb">
+<img src="https://images.unsplash.com/photo-1494526585095-c41746248156">
+<img src="https://images.unsplash.com/photo-1502672023488-70e25813eb80">
+<img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7">
+<img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb">
+<img src="https://images.unsplash.com/photo-1494526585095-c41746248156">
+<img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511">
+</div>
+</div>
+
+</div>
+
+<script>
+let i=0;
+setInterval(()=>{
+i++;
+document.getElementById("slides").style.transform=`translateX(-${i%3*100}%)`;
+},5000);
+</script>
+
+</body>
+</html>
