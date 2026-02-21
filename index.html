@@ -9,19 +9,13 @@
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
-
-body{
-font-family:'Inter',sans-serif;
-background:#0b0b0b;
-color:white;
-}
+body{font-family:'Inter',sans-serif;background:#0b0b0b;color:white;}
 
 header{
 position:fixed;
-width:100%;
 top:0;
-background:rgba(0,0,0,0.9);
-padding:20px 40px;
+width:100%;
+background:rgba(0,0,0,0.95);
 border-bottom:1px solid #1f1f1f;
 z-index:1000;
 }
@@ -29,42 +23,27 @@ z-index:1000;
 .header-inner{
 max-width:1300px;
 margin:auto;
+padding:20px 40px;
 display:flex;
 justify-content:space-between;
 align-items:center;
 }
 
-.logo img{
-height:125px;
-}
+.logo img{height:125px;}
 
-nav{
-display:flex;
-gap:35px;
-align-items:center;
-}
-
-nav a{
-color:#ddd;
-text-decoration:none;
-}
-
-nav a:hover{
-color:#c5a46d;
-}
+nav{display:flex;gap:35px;align-items:center;}
+nav a{text-decoration:none;color:#ddd;font-size:15px;}
+nav a:hover{color:#c5a46d;}
 
 .hero{
 margin-top:160px;
 height:100vh;
-background-image:url('./hero.jpg');
-background-size:cover;
-background-position:center;
-background-repeat:no-repeat;
-position:relative;
+background:url('hero.png') center/cover no-repeat;
 display:flex;
 align-items:center;
 justify-content:center;
 text-align:center;
+position:relative;
 }
 
 .hero::after{
@@ -89,6 +68,30 @@ font-size:56px;
 margin-bottom:20px;
 }
 
+.hero p{font-size:18px;color:#ccc;}
+
+section{padding:120px 40px;max-width:1200px;margin:auto;}
+
+h2{
+font-family:'Playfair Display',serif;
+font-size:36px;
+margin-bottom:50px;
+text-align:center;
+}
+
+.marquee{overflow:hidden;}
+.track{display:flex;animation:scroll 50s linear infinite;}
+.track img{
+height:240px;
+margin-right:25px;
+border-radius:10px;
+}
+
+@keyframes scroll{
+0%{transform:translateX(0);}
+100%{transform:translateX(-50%);}
+}
+
 footer{
 padding:60px;
 text-align:center;
@@ -98,12 +101,13 @@ margin-top:100px;
 }
 </style>
 </head>
+
 <body>
 
 <header>
 <div class="header-inner">
 <a href="index.html" class="logo">
-<img src="./logo.png" alt="Elevare">
+<img src="logo.png" alt="Elevare">
 </a>
 
 <nav>
@@ -121,6 +125,24 @@ margin-top:100px;
 <h1>Elevated Boutique Developments</h1>
 <p>Maximum 6-unit coastal luxury residences designed for structured capital growth.</p>
 </div>
+</section>
+
+<section>
+<h2>Reference Portfolio</h2>
+
+<div class="marquee">
+<div class="track">
+<img src="hero.png">
+<img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511">
+<img src="https://images.unsplash.com/photo-1499793983690-e29da59ef1c2">
+<img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae">
+<img src="https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6">
+<img src="https://images.unsplash.com/photo-1494526585095-c41746248156">
+<img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb">
+<img src="hero.png">
+</div>
+</div>
+
 </section>
 
 <footer>
