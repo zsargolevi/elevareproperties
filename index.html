@@ -10,72 +10,70 @@
 <style>
 
 *{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'Inter',sans-serif;background:#0a0a0a;color:white;}
+
+body{
+font-family:'Inter',sans-serif;
+background:#0a0a0a;
+color:white;
+}
+
+.container{
+max-width:1200px;
+margin:auto;
+padding:0 20px;
+}
 
 header{
 position:fixed;
 width:100%;
 top:0;
 left:0;
-padding:20px 8%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-background:rgba(0,0,0,0.7);
+background:rgba(0,0,0,0.8);
 backdrop-filter:blur(10px);
 z-index:1000;
 }
 
-.logo img{height:55px;}
+.header-inner{
+max-width:1200px;
+margin:auto;
+padding:20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo img{
+height:50px;
+}
 
 nav ul{
 list-style:none;
 display:flex;
-gap:30px;
-}
-
-nav ul li{
-position:relative;
-cursor:pointer;
-}
-
-nav ul li ul{
-position:absolute;
-top:30px;
-left:0;
-background:#111;
-display:none;
-flex-direction:column;
-padding:15px;
-min-width:200px;
-}
-
-nav ul li:hover ul{
-display:flex;
+gap:25px;
 }
 
 nav a{
 color:white;
 text-decoration:none;
-font-size:15px;
+font-size:14px;
+opacity:0.8;
 }
 
+nav a:hover{opacity:1;color:#c5a46d;}
+
 .lang-switch span{
-margin-left:15px;
+margin-left:12px;
 cursor:pointer;
 opacity:0.7;
+font-size:14px;
 }
 
 section{
-padding:140px 8%;
-}
-
-h1,h2{
-font-family:'Playfair Display',serif;
+padding:120px 0;
 }
 
 .hero{
-height:100vh;
+height:90vh;
 display:flex;
 align-items:center;
 justify-content:center;
@@ -100,46 +98,79 @@ height:100%;
 background:rgba(0,0,0,0.65);
 }
 
+.hero-content{
+position:relative;
+max-width:800px;
+padding:20px;
+}
+
+.hero h1{
+font-family:'Playfair Display',serif;
+font-size:48px;
+margin-bottom:20px;
+}
+
+.hero p{
+opacity:0.85;
+line-height:1.6;
+}
+
+h2{
+font-family:'Playfair Display',serif;
+margin-bottom:40px;
+font-size:32px;
+}
+
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-gap:50px;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+}
+
+.gallery img{
+width:100%;
+height:280px;
+object-fit:cover;
+border-radius:6px;
 }
 
 .card{
 background:#141414;
-padding:50px;
+padding:35px;
 border:1px solid #1f1f1f;
-transition:0.4s;
+border-radius:6px;
+transition:0.3s;
 }
 
 .card:hover{
-border:1px solid #c5a46d;
-transform:translateY(-6px);
+border-color:#c5a46d;
+transform:translateY(-5px);
 }
 
 .finance-box{
-background:#101010;
-padding:40px;
-margin-bottom:30px;
+background:#111;
+padding:30px;
+margin-bottom:20px;
 border-left:4px solid #c5a46d;
 }
 
 iframe{
 width:100%;
-height:600px;
-border:none;
+height:420px;
+border-radius:8px;
 }
 
 footer{
-padding:60px 8%;
 background:#050505;
+padding:50px 0;
 text-align:center;
+font-size:14px;
 opacity:0.6;
 }
 
 @media(max-width:768px){
 nav ul{display:none;}
+.hero h1{font-size:32px;}
 }
 
 </style>
@@ -147,20 +178,16 @@ nav ul{display:none;}
 <body>
 
 <header>
+<div class="header-inner">
 <div class="logo">
-<img src="logo.png" alt="Elevare Properties">
+<img src="logo.png" alt="Elevare">
 </div>
 
 <nav>
 <ul>
 <li><a href="#concept">Concept</a></li>
-<li>
-<a href="#">Developments</a>
-<ul>
-<li><a href="#vision">Architectural Vision</a></li>
-<li><a href="#render">3D Renderings</a></li>
-</ul>
-</li>
+<li><a href="#vision">Vision</a></li>
+<li><a href="#render">3D</a></li>
 <li><a href="#finance">Investment</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
@@ -170,6 +197,7 @@ nav ul{display:none;}
 <span onclick="setLang('hu')">HU</span>
 <span onclick="setLang('en')">EN</span>
 </div>
+</div>
 </header>
 
 <section class="hero">
@@ -177,63 +205,58 @@ nav ul{display:none;}
 <video autoplay muted loop>
 <source src="https://cdn.coverr.co/videos/coverr-luxury-house-1573/1080p.mp4">
 </video>
-<div>
+<div class="hero-content">
 <h1 data-hu="Limitált Luxus Fejlesztések"
 data-en="Limited Boutique Luxury Developments"></h1>
 
-<p data-hu="Maximális exkluzivitás. Strukturált értéknövekedés. Nemzetközi jövőkép."
-data-en="Maximum exclusivity. Structured value growth. International vision."></p>
+<p data-hu="Maximum 6 lakásos prémium tengerparti és kiemelt lokációs társasházak, hosszú távú értéknövekedési potenciállal."
+data-en="Exclusive six-unit boutique residences in prime coastal and landmark locations, designed for long-term asset growth."></p>
 </div>
 </section>
 
-<section id="concept">
-<h2 data-hu="Befektetői Stratégia" data-en="Investment Strategy"></h2>
-<br><br>
-<p data-hu="Az Elevare Properties célja Magyarországról indulva olyan prémium, maximum 6 lakásos fejlesztések létrehozása, amelyek alacsony kínálatú, magas presztízsű lokációkban helyezkednek el. A limitált lakásszám biztosítja az értéktartást és a jövőbeni prémium újraértékesítési lehetőséget."
-data-en="Elevare Properties launches from Hungary, focusing on boutique developments with a maximum of six residences in premium, low-supply locations. Limited unit structure ensures exclusivity and long-term capital appreciation."></p>
-</section>
-
 <section id="vision">
+<div class="container">
 <h2>Architectural Vision</h2>
-<br><br>
-<div class="grid">
+<div class="grid gallery">
 <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511">
 <img src="https://images.unsplash.com/photo-1499793983690-e29da59ef1c2">
 <img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae">
+<img src="https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6">
+</div>
 </div>
 </section>
 
 <section id="render">
-<h2>3D Render Experience</h2>
-<br><br>
-<p>Interactive architectural walkthrough preview:</p>
-<br>
+<div class="container">
+<h2>3D Experience</h2>
 <iframe src="https://my.matterport.com/show/?m=Jp6xg7nFzWb"></iframe>
+</div>
 </section>
 
 <section id="finance">
-<h2 data-hu="Pénzügyi Modell"
-data-en="Financial Model"></h2>
-<br><br>
+<div class="container">
+<h2>Investment Model</h2>
 
 <div class="finance-box">
-<strong>Target ROI:</strong> 12–18% projected annual appreciation  
+<strong>Target ROI:</strong> 12–18% projected annual growth
 </div>
 
 <div class="finance-box">
-<strong>IRR (5 year horizon):</strong> 15–20% estimated  
+<strong>5 Year IRR:</strong> 15–20% estimated
 </div>
 
 <div class="finance-box">
-<strong>Risk Model:</strong> Limited unit supply + prime micro-location positioning  
+<strong>Strategy:</strong> Limited supply + prime micro-location positioning
 </div>
 
+</div>
 </section>
 
 <section id="contact">
+<div class="container">
 <h2>Contact</h2>
-<br>
 <p>Email: info@elevareproperties.hu</p>
+</div>
 </section>
 
 <footer>
