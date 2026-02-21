@@ -4,36 +4,86 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Concept | Elevare</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
 <style>
-body{font-family:Inter;background:#f6f6f4;color:#1a1a1a;margin:0}
-.wrapper{max-width:1100px;margin:auto;padding:140px 40px}
-h1{font-family:Playfair Display;font-size:44px;margin-bottom:30px}
-p{line-height:1.8;margin-bottom:25px}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Inter',sans-serif;background:#0b0b0b;color:white;}
+
+.container{max-width:1100px;margin:auto;padding:0 40px;}
+header{position:fixed;width:100%;background:rgba(0,0,0,0.9);padding:20px 40px;border-bottom:1px solid #1f1f1f;z-index:1000;}
+.header-inner{display:flex;justify-content:space-between;align-items:center;max-width:1300px;margin:auto;}
+.logo img{height:125px;}
+nav{display:flex;gap:35px;align-items:center;}
+nav a{text-decoration:none;color:#ddd;}
+nav a:hover{color:#c5a46d;}
+.lang-switch span{margin-left:15px;cursor:pointer;color:#aaa;}
+
+.sub-hero{
+margin-top:160px;
+height:320px;
+background:url('hero.jpg') center/cover no-repeat;
+position:relative;
+}
+.sub-hero::after{
+content:'';
+position:absolute;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.75);
+backdrop-filter:blur(6px);
+}
+
+section{padding:120px 0;}
+h1{font-family:'Playfair Display',serif;font-size:42px;margin-bottom:40px;}
+p{line-height:1.8;margin-bottom:30px;color:#ccc;}
+
+footer{padding:60px;text-align:center;border-top:1px solid #1f1f1f;color:#777;}
 </style>
 </head>
 <body>
 
-<div class="wrapper">
-
-<h1 data-hu="Strukturált Luxus Fejlesztési Stratégia"
-data-en="Structured Luxury Development Strategy"></h1>
-
-<p data-hu="Az Elevare Properties olyan limitált, maximum 6 lakásos prémium fejlesztéseket hoz létre, amelyek mesterségesen alacsonyan tartott kínálattal biztosítják az exkluzivitást és a másodpiaci prémium árazást."
-data-en="Elevare Properties develops boutique residences limited to six units, strategically maintaining scarcity to support premium resale positioning."></p>
-
-<p data-hu="A magyarországi indulás stabil alapot biztosít, majd a brand nemzetközi szinten skálázható mediterrán és kiemelt vízparti lokációk felé."
-data-en="The Hungarian launch establishes a stable foundation before international expansion toward Mediterranean and prime coastal markets."></p>
-
-<p data-hu="A credit alapú tulajdonosi csere rendszer hosszú távon globális hálózatot épít."
-data-en="The credit-based ownership exchange model builds a long-term global network effect."></p>
-
+<header>
+<div class="header-inner">
+<a href="index.html" class="logo"><img src="logo.png"></a>
+<nav>
+<a href="concept.html">Concept</a>
+<a href="projects.html">Projects</a>
+<a href="investment.html">Investment</a>
+<a href="investor.html">Investor</a>
+<div class="lang-switch">
+<span onclick="setLang('hu')">HU</span>
+<span onclick="setLang('en')">EN</span>
 </div>
+</nav>
+</div>
+</header>
+
+<div class="sub-hero"></div>
+
+<section class="container">
+<h1>Strategic Development Framework</h1>
+
+<p>
+Elevare Properties develops boutique luxury residences limited to six units per project. 
+This artificial scarcity model enhances long-term value retention and supports premium resale positioning.
+</p>
+
+<p>
+Launching from Hungary, the brand establishes operational stability before scaling toward Mediterranean and prime coastal markets.
+</p>
+
+<p>
+The long-term vision includes a structured credit-based exchange ecosystem enabling global residential flexibility.
+</p>
+</section>
+
+<footer>
+© 2026 Elevare Properties
+</footer>
 
 <script>
-function setLang(lang){localStorage.setItem("lang",lang);applyLang();}
-function applyLang(){let lang=localStorage.getItem("lang")||"hu";document.querySelectorAll("[data-hu]").forEach(el=>{el.innerHTML=el.getAttribute("data-"+lang);});}
-document.addEventListener("DOMContentLoaded",applyLang);
+function setLang(lang){localStorage.setItem("lang",lang);}
 </script>
 
 </body>
