@@ -5,75 +5,58 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Elevare Properties</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
-
 *{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Inter',sans-serif;background:#0b0b0b;color:white;}
 
-body{
-font-family:'Inter',sans-serif;
-background:#0a0a0a;
-color:white;
-}
-
-.container{
-max-width:1200px;
-margin:auto;
-padding:0 20px;
-}
+.container{max-width:1300px;margin:auto;padding:0 20px;}
 
 header{
 position:fixed;
 width:100%;
 top:0;
 left:0;
-background:rgba(0,0,0,0.8);
-backdrop-filter:blur(10px);
+background:rgba(0,0,0,0.85);
+backdrop-filter:blur(8px);
 z-index:1000;
 }
 
 .header-inner{
-max-width:1200px;
-margin:auto;
-padding:20px;
 display:flex;
 justify-content:space-between;
 align-items:center;
+padding:20px;
+max-width:1300px;
+margin:auto;
 }
 
 .logo img{
-height:50px;
+height:75px;
+filter:drop-shadow(0 0 8px rgba(197,164,109,0.4));
 }
 
 nav ul{
 list-style:none;
 display:flex;
-gap:25px;
+gap:30px;
 }
 
 nav a{
 color:white;
 text-decoration:none;
 font-size:14px;
-opacity:0.8;
+opacity:0.85;
 }
 
-nav a:hover{opacity:1;color:#c5a46d;}
+nav a:hover{color:#c5a46d;}
 
-.lang-switch span{
-margin-left:12px;
-cursor:pointer;
-opacity:0.7;
-font-size:14px;
-}
-
-section{
-padding:120px 0;
-}
+section{padding:140px 0;}
 
 .hero{
-height:90vh;
+height:100vh;
+background:url('hero.jpg') center/cover no-repeat;
 display:flex;
 align-items:center;
 justify-content:center;
@@ -81,70 +64,67 @@ text-align:center;
 position:relative;
 }
 
-.hero video{
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-object-fit:cover;
-z-index:-1;
-}
-
-.overlay{
+.hero::after{
+content:'';
 position:absolute;
 width:100%;
 height:100%;
-background:rgba(0,0,0,0.65);
+background:rgba(0,0,0,0.6);
+top:0;left:0;
 }
 
 .hero-content{
 position:relative;
+z-index:2;
 max-width:800px;
-padding:20px;
 }
 
 .hero h1{
 font-family:'Playfair Display',serif;
-font-size:48px;
+font-size:52px;
 margin-bottom:20px;
 }
 
-.hero p{
-opacity:0.85;
-line-height:1.6;
+.slider{
+overflow:hidden;
+position:relative;
 }
 
-h2{
-font-family:'Playfair Display',serif;
-margin-bottom:40px;
-font-size:32px;
+.slides{
+display:flex;
+transition:transform 0.6s ease;
 }
 
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:30px;
+.slide{
+min-width:100%;
 }
 
-.gallery img{
+.slide img{
 width:100%;
-height:280px;
+height:420px;
 object-fit:cover;
+border-radius:8px;
+}
+
+.marquee{
+overflow:hidden;
+white-space:nowrap;
+}
+
+.marquee-track{
+display:inline-block;
+animation:scroll 40s linear infinite;
+}
+
+.marquee img{
+height:220px;
+margin-right:20px;
 border-radius:6px;
 }
 
-.card{
-background:#141414;
-padding:35px;
-border:1px solid #1f1f1f;
-border-radius:6px;
-transition:0.3s;
-}
-
-.card:hover{
-border-color:#c5a46d;
-transform:translateY(-5px);
+@keyframes scroll{
+0%{transform:translateX(0);}
+100%{transform:translateX(-50%);}
 }
 
 .finance-box{
@@ -154,23 +134,25 @@ margin-bottom:20px;
 border-left:4px solid #c5a46d;
 }
 
-iframe{
+input{
+padding:10px;
+margin:10px 0;
 width:100%;
-height:420px;
-border-radius:8px;
+max-width:300px;
+}
+
+button{
+padding:12px 25px;
+background:#c5a46d;
+border:none;
+cursor:pointer;
 }
 
 footer{
 background:#050505;
 padding:50px 0;
 text-align:center;
-font-size:14px;
 opacity:0.6;
-}
-
-@media(max-width:768px){
-nav ul{display:none;}
-.hero h1{font-size:32px;}
 }
 
 </style>
@@ -180,83 +162,82 @@ nav ul{display:none;}
 <header>
 <div class="header-inner">
 <div class="logo">
-<img src="logo.png" alt="Elevare">
+<img src="logo.png">
 </div>
-
 <nav>
 <ul>
-<li><a href="#concept">Concept</a></li>
-<li><a href="#vision">Vision</a></li>
-<li><a href="#render">3D</a></li>
+<li><a href="#projects">Projects</a></li>
 <li><a href="#finance">Investment</a></li>
-<li><a href="#contact">Contact</a></li>
+<li><a href="investor.html">Investor Portal</a></li>
 </ul>
 </nav>
-
-<div class="lang-switch">
-<span onclick="setLang('hu')">HU</span>
-<span onclick="setLang('en')">EN</span>
-</div>
 </div>
 </header>
 
 <section class="hero">
-<div class="overlay"></div>
-<video autoplay muted loop>
-<source src="https://cdn.coverr.co/videos/coverr-luxury-house-1573/1080p.mp4">
-</video>
 <div class="hero-content">
-<h1 data-hu="Limitált Luxus Fejlesztések"
-data-en="Limited Boutique Luxury Developments"></h1>
-
-<p data-hu="Maximum 6 lakásos prémium tengerparti és kiemelt lokációs társasházak, hosszú távú értéknövekedési potenciállal."
-data-en="Exclusive six-unit boutique residences in prime coastal and landmark locations, designed for long-term asset growth."></p>
+<h1>Premium Boutique Developments</h1>
+<p>Maximum 6-unit coastal residences with structured capital growth.</p>
 </div>
 </section>
 
-<section id="vision">
-<div class="container">
-<h2>Architectural Vision</h2>
-<div class="grid gallery">
+<section id="projects" class="container">
+<h2>Featured Developments</h2>
+<br><br>
+
+<div class="slider">
+<div class="slides" id="slideContainer">
+<div class="slide"><img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511"></div>
+<div class="slide"><img src="https://images.unsplash.com/photo-1499793983690-e29da59ef1c2"></div>
+<div class="slide"><img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae"></div>
+</div>
+</div>
+</section>
+
+<section class="container">
+<h2>Reference Portfolio</h2>
+<br><br>
+
+<div class="marquee">
+<div class="marquee-track">
 <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511">
 <img src="https://images.unsplash.com/photo-1499793983690-e29da59ef1c2">
 <img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae">
 <img src="https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6">
+<img src="https://images.unsplash.com/photo-1502672023488-70e25813eb80">
+<img src="https://images.unsplash.com/photo-1494526585095-c41746248156">
+<img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb">
+<img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7">
+<img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb">
+<img src="https://images.unsplash.com/photo-1494526585095-c41746248156">
 </div>
 </div>
 </section>
 
-<section id="render">
-<div class="container">
-<h2>3D Experience</h2>
-<iframe src="https://my.matterport.com/show/?m=Jp6xg7nFzWb"></iframe>
-</div>
-</section>
-
-<section id="finance">
-<div class="container">
-<h2>Investment Model</h2>
+<section id="finance" class="container">
+<h2>Investment Calculator</h2>
+<br>
 
 <div class="finance-box">
-<strong>Target ROI:</strong> 12–18% projected annual growth
+<label>Investment Amount (€)</label><br>
+<input type="number" id="investment"><br>
+
+<label>Expected Annual Growth (%)</label><br>
+<input type="number" id="growth"><br>
+
+<label>Years</label><br>
+<input type="number" id="years"><br>
+
+<button onclick="calculate()">Calculate</button>
+
+<p id="result"></p>
 </div>
 
-<div class="finance-box">
-<strong>5 Year IRR:</strong> 15–20% estimated
-</div>
+<br>
+<a href="investor-deck.pdf" download>
+<button>Download Investor PDF</button>
+</a>
 
-<div class="finance-box">
-<strong>Strategy:</strong> Limited supply + prime micro-location positioning
-</div>
-
-</div>
-</section>
-
-<section id="contact">
-<div class="container">
-<h2>Contact</h2>
-<p>Email: info@elevareproperties.hu</p>
-</div>
 </section>
 
 <footer>
@@ -264,13 +245,19 @@ data-en="Exclusive six-unit boutique residences in prime coastal and landmark lo
 </footer>
 
 <script>
-function setLang(lang){
-document.documentElement.lang=lang;
-document.querySelectorAll('[data-hu]').forEach(el=>{
-el.textContent=el.getAttribute('data-'+lang);
-});
+let index=0;
+setInterval(()=>{
+index++;
+document.getElementById('slideContainer').style.transform=`translateX(-${index%3*100}%)`;
+},4000);
+
+function calculate(){
+let inv=parseFloat(document.getElementById('investment').value);
+let growth=parseFloat(document.getElementById('growth').value)/100;
+let years=parseFloat(document.getElementById('years').value);
+let result=inv*Math.pow((1+growth),years);
+document.getElementById('result').innerText="Projected Value: €"+result.toFixed(2);
 }
-setLang('hu');
 </script>
 
 </body>
