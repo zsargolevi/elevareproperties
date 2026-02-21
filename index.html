@@ -12,12 +12,12 @@
 
 body{
 font-family:'Inter',sans-serif;
-background:#f6f6f4;
-color:#1a1a1a;
+background:#0b0b0b;
+color:white;
 }
 
-.wrapper{
-max-width:1280px;
+.container{
+max-width:1300px;
 margin:auto;
 padding:0 40px;
 }
@@ -27,18 +27,19 @@ position:fixed;
 width:100%;
 top:0;
 left:0;
-background:white;
-border-bottom:1px solid #e5e5e5;
+background:rgba(0,0,0,0.85);
+backdrop-filter:blur(8px);
 z-index:1000;
+border-bottom:1px solid #1f1f1f;
 }
 
 .header-inner{
-max-width:1280px;
-margin:auto;
-padding:20px 40px;
 display:flex;
-align-items:center;
 justify-content:space-between;
+align-items:center;
+padding:20px 40px;
+max-width:1300px;
+margin:auto;
 }
 
 .logo img{
@@ -58,37 +59,29 @@ gap:40px;
 
 nav a{
 text-decoration:none;
-color:#333;
+color:#ddd;
 font-size:15px;
-font-weight:500;
 }
 
 nav a:hover{
 color:#c5a46d;
 }
 
-.lang-switch{
-margin-left:30px;
-}
-
 .lang-switch span{
-margin-left:12px;
+margin-left:15px;
 cursor:pointer;
 font-size:14px;
-color:#777;
+color:#aaa;
 }
 
 .hero{
-margin-top:180px;
-height:75vh;
+height:100vh;
 background:url('hero.jpg') center/cover no-repeat;
 display:flex;
 align-items:center;
 justify-content:center;
 text-align:center;
 position:relative;
-border-radius:12px;
-overflow:hidden;
 }
 
 .hero::after{
@@ -96,7 +89,7 @@ content:'';
 position:absolute;
 width:100%;
 height:100%;
-background:rgba(0,0,0,0.35);
+background:rgba(0,0,0,0.6);
 top:0;
 left:0;
 }
@@ -104,13 +97,12 @@ left:0;
 .hero-content{
 position:relative;
 z-index:2;
-max-width:700px;
-color:white;
+max-width:800px;
 }
 
 .hero h1{
 font-family:'Playfair Display',serif;
-font-size:52px;
+font-size:56px;
 margin-bottom:20px;
 }
 
@@ -120,39 +112,41 @@ opacity:0.9;
 }
 
 section{
-padding:120px 0;
+padding:140px 0;
 }
 
 h2{
 font-family:'Playfair Display',serif;
 font-size:36px;
-margin-bottom:40px;
+margin-bottom:50px;
 text-align:center;
 }
 
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:30px;
+.marquee{
+overflow:hidden;
 }
 
-.card{
-background:white;
-padding:40px;
-border-radius:12px;
-box-shadow:0 10px 30px rgba(0,0,0,0.05);
+.track{
+display:flex;
+animation:scroll 45s linear infinite;
 }
 
-.card h3{
-margin-bottom:15px;
+.track img{
+height:240px;
+margin-right:25px;
+border-radius:10px;
+}
+
+@keyframes scroll{
+0%{transform:translateX(0)}
+100%{transform:translateX(-50%)}
 }
 
 footer{
 padding:60px 0;
 text-align:center;
-color:#777;
-font-size:14px;
-border-top:1px solid #e5e5e5;
+border-top:1px solid #1f1f1f;
+color:#888;
 }
 
 </style>
@@ -162,14 +156,14 @@ border-top:1px solid #e5e5e5;
 <header>
 <div class="header-inner">
 <a href="index.html" class="logo">
-<img src="logo.png" alt="Elevare Properties">
+<img src="logo.png" alt="Elevare">
 </a>
 
 <nav>
 <a href="concept.html">Concept</a>
 <a href="projects.html">Projects</a>
 <a href="investment.html">Investment</a>
-<a href="investor.html">Investor Portal</a>
+<a href="investor.html">Investor</a>
 
 <div class="lang-switch">
 <span onclick="setLang('hu')">HU</span>
@@ -179,38 +173,32 @@ border-top:1px solid #e5e5e5;
 </div>
 </header>
 
-<div class="wrapper">
-
-<div class="hero">
+<section class="hero">
 <div class="hero-content">
 <h1>Elevated Boutique Developments</h1>
-<p>Maximum 6-unit luxury residences designed for structured long-term capital growth.</p>
+<p>Maximum 6-unit coastal luxury residences designed for structured capital growth.</p>
 </div>
-</div>
+</section>
 
-<section>
-<h2>Our Philosophy</h2>
+<section class="container">
+<h2>Reference Portfolio</h2>
 
-<div class="grid">
-<div class="card">
-<h3>Scarcity Driven Value</h3>
-<p>Each development contains maximum six residences ensuring limited supply and premium positioning.</p>
-</div>
-
-<div class="card">
-<h3>Prime Micro-Locations</h3>
-<p>Strategically selected high-demand areas supporting long-term appreciation.</p>
-</div>
-
-<div class="card">
-<h3>Hungarian Launch – Global Vision</h3>
-<p>Starting from Hungary with scalable international expansion strategy.</p>
+<div class="marquee">
+<div class="track">
+<img src="hero.jpg">
+<img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511">
+<img src="https://images.unsplash.com/photo-1499793983690-e29da59ef1c2">
+<img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae">
+<img src="https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6">
+<img src="https://images.unsplash.com/photo-1494526585095-c41746248156">
+<img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb">
+<img src="https://images.unsplash.com/photo-1502672023488-70e25813eb80">
+<img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7">
+<img src="hero.jpg">
 </div>
 </div>
 
 </section>
-
-</div>
 
 <footer>
 © 2026 Elevare Properties
@@ -218,23 +206,9 @@ border-top:1px solid #e5e5e5;
 
 <script>
 function setLang(lang){
-document.documentElement.lang=lang;
+localStorage.setItem("lang",lang);
 }
 </script>
 
 </body>
 </html>
-<script>
-function setLang(lang){
-localStorage.setItem("lang", lang);
-applyLang();
-}
-function applyLang(){
-let lang = localStorage.getItem("lang") || "hu";
-document.documentElement.lang = lang;
-document.querySelectorAll("[data-hu]").forEach(el=>{
-el.innerHTML = el.getAttribute("data-"+lang);
-});
-}
-document.addEventListener("DOMContentLoaded", applyLang);
-</script>
