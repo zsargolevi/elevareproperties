@@ -9,59 +9,86 @@
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'Inter',sans-serif;background:#0b0b0b;color:white;}
 
-.container{max-width:1300px;margin:auto;padding:0 20px;}
+body{
+font-family:'Inter',sans-serif;
+background:#f6f6f4;
+color:#1a1a1a;
+}
+
+.wrapper{
+max-width:1280px;
+margin:auto;
+padding:0 40px;
+}
 
 header{
 position:fixed;
 width:100%;
 top:0;
 left:0;
-background:rgba(0,0,0,0.85);
-backdrop-filter:blur(8px);
+background:white;
+border-bottom:1px solid #e5e5e5;
 z-index:1000;
 }
 
 .header-inner{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px;
-max-width:1300px;
+max-width:1280px;
 margin:auto;
+padding:20px 40px;
+display:flex;
+align-items:center;
+justify-content:space-between;
 }
 
 .logo img{
-height:75px;
-filter:drop-shadow(0 0 8px rgba(197,164,109,0.4));
+height:125px;
+transition:0.3s;
 }
 
-nav ul{
-list-style:none;
-display:flex;
-gap:30px;
-}
-
-nav a{
-color:white;
-text-decoration:none;
-font-size:14px;
+.logo img:hover{
 opacity:0.85;
 }
 
-nav a:hover{color:#c5a46d;}
+nav{
+display:flex;
+align-items:center;
+gap:40px;
+}
 
-section{padding:140px 0;}
+nav a{
+text-decoration:none;
+color:#333;
+font-size:15px;
+font-weight:500;
+}
+
+nav a:hover{
+color:#c5a46d;
+}
+
+.lang-switch{
+margin-left:30px;
+}
+
+.lang-switch span{
+margin-left:12px;
+cursor:pointer;
+font-size:14px;
+color:#777;
+}
 
 .hero{
-height:100vh;
+margin-top:180px;
+height:75vh;
 background:url('hero.jpg') center/cover no-repeat;
 display:flex;
 align-items:center;
 justify-content:center;
 text-align:center;
 position:relative;
+border-radius:12px;
+overflow:hidden;
 }
 
 .hero::after{
@@ -69,14 +96,16 @@ content:'';
 position:absolute;
 width:100%;
 height:100%;
-background:rgba(0,0,0,0.6);
-top:0;left:0;
+background:rgba(0,0,0,0.35);
+top:0;
+left:0;
 }
 
 .hero-content{
 position:relative;
 z-index:2;
-max-width:800px;
+max-width:700px;
+color:white;
 }
 
 .hero h1{
@@ -85,74 +114,45 @@ font-size:52px;
 margin-bottom:20px;
 }
 
-.slider{
-overflow:hidden;
-position:relative;
+.hero p{
+font-size:18px;
+opacity:0.9;
 }
 
-.slides{
-display:flex;
-transition:transform 0.6s ease;
+section{
+padding:120px 0;
 }
 
-.slide{
-min-width:100%;
+h2{
+font-family:'Playfair Display',serif;
+font-size:36px;
+margin-bottom:40px;
+text-align:center;
 }
 
-.slide img{
-width:100%;
-height:420px;
-object-fit:cover;
-border-radius:8px;
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
 }
 
-.marquee{
-overflow:hidden;
-white-space:nowrap;
+.card{
+background:white;
+padding:40px;
+border-radius:12px;
+box-shadow:0 10px 30px rgba(0,0,0,0.05);
 }
 
-.marquee-track{
-display:inline-block;
-animation:scroll 40s linear infinite;
-}
-
-.marquee img{
-height:220px;
-margin-right:20px;
-border-radius:6px;
-}
-
-@keyframes scroll{
-0%{transform:translateX(0);}
-100%{transform:translateX(-50%);}
-}
-
-.finance-box{
-background:#111;
-padding:30px;
-margin-bottom:20px;
-border-left:4px solid #c5a46d;
-}
-
-input{
-padding:10px;
-margin:10px 0;
-width:100%;
-max-width:300px;
-}
-
-button{
-padding:12px 25px;
-background:#c5a46d;
-border:none;
-cursor:pointer;
+.card h3{
+margin-bottom:15px;
 }
 
 footer{
-background:#050505;
-padding:50px 0;
+padding:60px 0;
 text-align:center;
-opacity:0.6;
+color:#777;
+font-size:14px;
+border-top:1px solid #e5e5e5;
 }
 
 </style>
@@ -161,104 +161,80 @@ opacity:0.6;
 
 <header>
 <div class="header-inner">
-<div class="logo">
-<img src="logo.png">
-</div>
+<a href="index.html" class="logo">
+<img src="logo.png" alt="Elevare Properties">
+</a>
+
 <nav>
-<ul>
-<li><a href="#projects">Projects</a></li>
-<li><a href="#finance">Investment</a></li>
-<li><a href="investor.html">Investor Portal</a></li>
-</ul>
+<a href="concept.html">Concept</a>
+<a href="projects.html">Projects</a>
+<a href="investment.html">Investment</a>
+<a href="investor.html">Investor Portal</a>
+
+<div class="lang-switch">
+<span onclick="setLang('hu')">HU</span>
+<span onclick="setLang('en')">EN</span>
+</div>
 </nav>
 </div>
 </header>
 
-<section class="hero">
+<div class="wrapper">
+
+<div class="hero">
 <div class="hero-content">
-<h1>Premium Boutique Developments</h1>
-<p>Maximum 6-unit coastal residences with structured capital growth.</p>
+<h1>Elevated Boutique Developments</h1>
+<p>Maximum 6-unit luxury residences designed for structured long-term capital growth.</p>
 </div>
+</div>
+
+<section>
+<h2>Our Philosophy</h2>
+
+<div class="grid">
+<div class="card">
+<h3>Scarcity Driven Value</h3>
+<p>Each development contains maximum six residences ensuring limited supply and premium positioning.</p>
+</div>
+
+<div class="card">
+<h3>Prime Micro-Locations</h3>
+<p>Strategically selected high-demand areas supporting long-term appreciation.</p>
+</div>
+
+<div class="card">
+<h3>Hungarian Launch – Global Vision</h3>
+<p>Starting from Hungary with scalable international expansion strategy.</p>
+</div>
+</div>
+
 </section>
 
-<section id="projects" class="container">
-<h2>Featured Developments</h2>
-<br><br>
-
-<div class="slider">
-<div class="slides" id="slideContainer">
-<div class="slide"><img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511"></div>
-<div class="slide"><img src="https://images.unsplash.com/photo-1499793983690-e29da59ef1c2"></div>
-<div class="slide"><img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae"></div>
 </div>
-</div>
-</section>
-
-<section class="container">
-<h2>Reference Portfolio</h2>
-<br><br>
-
-<div class="marquee">
-<div class="marquee-track">
-<img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511">
-<img src="https://images.unsplash.com/photo-1499793983690-e29da59ef1c2">
-<img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae">
-<img src="https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6">
-<img src="https://images.unsplash.com/photo-1502672023488-70e25813eb80">
-<img src="https://images.unsplash.com/photo-1494526585095-c41746248156">
-<img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb">
-<img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7">
-<img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb">
-<img src="https://images.unsplash.com/photo-1494526585095-c41746248156">
-</div>
-</div>
-</section>
-
-<section id="finance" class="container">
-<h2>Investment Calculator</h2>
-<br>
-
-<div class="finance-box">
-<label>Investment Amount (€)</label><br>
-<input type="number" id="investment"><br>
-
-<label>Expected Annual Growth (%)</label><br>
-<input type="number" id="growth"><br>
-
-<label>Years</label><br>
-<input type="number" id="years"><br>
-
-<button onclick="calculate()">Calculate</button>
-
-<p id="result"></p>
-</div>
-
-<br>
-<a href="investor-deck.pdf" download>
-<button>Download Investor PDF</button>
-</a>
-
-</section>
 
 <footer>
 © 2026 Elevare Properties
 </footer>
 
 <script>
-let index=0;
-setInterval(()=>{
-index++;
-document.getElementById('slideContainer').style.transform=`translateX(-${index%3*100}%)`;
-},4000);
-
-function calculate(){
-let inv=parseFloat(document.getElementById('investment').value);
-let growth=parseFloat(document.getElementById('growth').value)/100;
-let years=parseFloat(document.getElementById('years').value);
-let result=inv*Math.pow((1+growth),years);
-document.getElementById('result').innerText="Projected Value: €"+result.toFixed(2);
+function setLang(lang){
+document.documentElement.lang=lang;
 }
 </script>
 
 </body>
 </html>
+<script>
+function setLang(lang){
+localStorage.setItem("lang", lang);
+applyLang();
+}
+function applyLang(){
+let lang = localStorage.getItem("lang") || "hu";
+document.documentElement.lang = lang;
+document.querySelectorAll("[data-hu]").forEach(el=>{
+el.innerHTML = el.getAttribute("data-"+lang);
+});
+}
+document.addEventListener("DOMContentLoaded", applyLang);
+</script>
