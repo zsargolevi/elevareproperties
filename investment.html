@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8">
 <title>Investment | Elevare</title>
 <style>
-body{font-family:Arial;background:#f6f6f4;padding:120px}
-input{padding:10px;margin:10px 0;width:300px}
-button{padding:12px 25px;background:#c5a46d;border:none}
+body{margin:0;font-family:Arial;background:#0b0b0b;color:white;}
+.container{max-width:900px;margin:auto;padding:160px 40px;}
+input{padding:12px;margin:10px 0;width:300px;}
+button{padding:12px 25px;background:#c5a46d;border:none;color:black;}
 </style>
 </head>
 <body>
 
+<div class="container">
 <h1>Investment Calculator</h1>
 
 <label>Investment (€)</label><br>
@@ -24,16 +27,15 @@ button{padding:12px 25px;background:#c5a46d;border:none}
 <button onclick="calc()">Calculate</button>
 
 <p id="out"></p>
+</div>
 
 <script>
 function calc(){
-let inv=parseFloat(inv.value);
-let rate=parseFloat(rate.value)/100;
-let years=parseFloat(years.value);
+let inv=parseFloat(document.getElementById("inv").value);
+let rate=parseFloat(document.getElementById("rate").value)/100;
+let years=parseFloat(document.getElementById("years").value);
 let future=inv*Math.pow((1+rate),years);
-let profit=future-inv;
-document.getElementById("out").innerHTML=
-"Future Value: €"+future.toFixed(2)+"<br>Profit: €"+profit.toFixed(2);
+document.getElementById("out").innerHTML="Projected Value: €"+future.toFixed(2);
 }
 </script>
 
