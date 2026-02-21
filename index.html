@@ -1,37 +1,203 @@
 <!DOCTYPE html>
 <html lang="hu">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elevare Properties</title>
-    <meta name="description" content="Elevare Properties – Prémium ingatlan megoldások.">
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #0f0f0f;
-            color: white;
-            text-align: center;
-        }
-        .hero {
-            padding: 120px 20px;
-        }
-        h1 {
-            font-size: 48px;
-            letter-spacing: 2px;
-        }
-        p {
-            font-size: 20px;
-            opacity: 0.8;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elevare Properties | Bespoke Luxury Developments</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:#0b0b0b;
+    color:#fff;
+    overflow-x:hidden;
+}
+
+h1,h2,h3{
+    font-family:'Playfair Display',serif;
+    font-weight:600;
+}
+
+section{
+    padding:120px 8%;
+}
+
+.hero{
+    height:100vh;
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+}
+
+.hero video{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    z-index:-1;
+}
+
+.overlay{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.6);
+}
+
+.hero-content{
+    max-width:900px;
+}
+
+.hero h1{
+    font-size:64px;
+    letter-spacing:2px;
+}
+
+.hero p{
+    margin-top:20px;
+    font-size:20px;
+    opacity:0.8;
+}
+
+.button{
+    margin-top:40px;
+    display:inline-block;
+    padding:14px 32px;
+    border:1px solid #c5a46d;
+    color:#c5a46d;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.button:hover{
+    background:#c5a46d;
+    color:#000;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:40px;
+}
+
+.card{
+    background:#151515;
+    padding:40px;
+    border:1px solid #222;
+    transition:0.4s;
+}
+
+.card:hover{
+    border:1px solid #c5a46d;
+    transform:translateY(-5px);
+}
+
+.gallery img{
+    width:100%;
+    height:400px;
+    object-fit:cover;
+}
+
+.footer{
+    padding:60px 8%;
+    background:#050505;
+    text-align:center;
+    font-size:14px;
+    opacity:0.6;
+}
+
+@media(max-width:768px){
+    .hero h1{
+        font-size:40px;
+    }
+}
+
+</style>
 </head>
 <body>
 
-    <div class="hero">
-        <h1>ELEVARE PROPERTIES</h1>
-        <p>Prémium ingatlan megoldások</p>
-    </div>
+<section class="hero">
+<div class="overlay"></div>
+<video autoplay muted loop>
+<source src="https://cdn.coverr.co/videos/coverr-luxury-house-1573/1080p.mp4" type="video/mp4">
+</video>
+
+<div class="hero-content">
+<h1>ELEVARE PROPERTIES</h1>
+<p>Bespoke High-End Developments Across Iconic Global Locations</p>
+<a href="#concept" class="button">Discover More</a>
+</div>
+</section>
+
+<section id="concept">
+<h2 style="margin-bottom:60px;">The Concept</h2>
+<div class="grid">
+<div class="card">
+<h3>Exclusive Locations</h3>
+<p>Curated developments in globally desirable destinations with architectural distinction and timeless value.</p>
+</div>
+
+<div class="card">
+<h3>Luxury Craftsmanship</h3>
+<p>Meticulous design, premium materials and a refined aesthetic that transcends traditional real estate.</p>
+</div>
+
+<div class="card">
+<h3>Credit Exchange System</h3>
+<p>Owners can exchange residences internationally using a proprietary credit allocation system — redefining global ownership flexibility.</p>
+</div>
+</div>
+</section>
+
+<section>
+<h2 style="margin-bottom:60px;">Visual Concepts</h2>
+<div class="grid gallery">
+<img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" />
+<img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d" />
+<img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde" />
+</div>
+</section>
+
+<section>
+<h2 style="margin-bottom:60px;">How It Works</h2>
+<div class="grid">
+<div class="card">
+<h3>Ownership</h3>
+<p>Purchase a development and receive credit allocation based on property tier and location.</p>
+</div>
+<div class="card">
+<h3>Exchange</h3>
+<p>Use credits to temporarily reside in partner developments worldwide.</p>
+</div>
+<div class="card">
+<h3>Global Lifestyle</h3>
+<p>Seamless cross-border living for discerning global citizens.</p>
+</div>
+</div>
+</section>
+
+<section>
+<h2 style="margin-bottom:40px;">Contact</h2>
+<p>Email: info@elevareproperties.hu</p>
+<p>Budapest | International Developments</p>
+</section>
+
+<div class="footer">
+© 2026 Elevare Properties — All rights reserved
+</div>
 
 </body>
 </html>
