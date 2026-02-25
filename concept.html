@@ -2,83 +2,43 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Concept | Elevare</title>
-<style>
-body{margin:0;background:#0b0b0b;color:white;font-family:Arial;}
-
-header{
-position:fixed;
-width:100%;
-background:rgba(0,0,0,0.95);
-padding:20px 40px;
-border-bottom:1px solid #1f1f1f;
-}
-
-.header-inner{
-max-width:1300px;
-margin:auto;
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
-
-.logo img{height:125px;}
-
-nav{display:flex;gap:35px;}
-nav a{color:#ddd;text-decoration:none;}
-nav a:hover{color:#c5a46d;}
-
-.sub-hero{
-margin-top:160px;
-height:350px;
-background:url('hero.png') center/cover no-repeat;
-position:relative;
-}
-
-.sub-hero::after{
-content:'';
-position:absolute;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.75);
-backdrop-filter:blur(6px);
-top:0;
-left:0;
-}
-
-.container{max-width:1100px;margin:auto;padding:120px 40px;}
-h1{font-size:40px;margin-bottom:30px;}
-p{line-height:1.8;color:#ccc;margin-bottom:25px;}
-
-footer{padding:60px;text-align:center;border-top:1px solid #1f1f1f;color:#777;}
-</style>
+<title>Concept - Elevare</title>
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
 <header>
-<div class="header-inner">
-<a href="index.html" class="logo"><img src="logo.png"></a>
+<a href="index.html"><img src="logo.png" class="logo"></a>
 <nav>
-<a href="index.html">Home</a>
-<a href="concept.html">Concept</a>
-<a href="projects.html">Projects</a>
-<a href="investment.html">Investment</a>
-<a href="investor.html">Investor</a>
+<a href="projects.html" data-en="Projects" data-hu="Projektek">Projects</a>
+<a href="investment.html" data-en="Investment" data-hu="Befektetés">Investment</a>
+<a href="concept.html" data-en="Concept" data-hu="Koncepció">Concept</a>
+<button onclick="setLang('en')">EN</button>
+<button onclick="setLang('hu')">HU</button>
 </nav>
-</div>
 </header>
 
-<div class="sub-hero"></div>
+<div class="blur-background"></div>
 
-<div class="container">
-<h1>Strategic Development Framework</h1>
-<p>Elevare develops boutique residences limited to six units per project to enhance scarcity-driven value.</p>
-<p>Hungarian launch ensures operational stability before international expansion.</p>
-<p>Long-term strategy includes credit-based ownership exchange ecosystem.</p>
-</div>
+<section class="content">
 
-<footer>© 2026 Elevare Properties</footer>
+<h2 data-en="Our Vision"
+    data-hu="Víziónk">
+Our Vision
+</h2>
 
+<p data-en="Elevare Properties develops exclusive, self-sustaining, high-end residences in premium locations..."
+   data-hu="Az Elevare Properties exkluzív, önfenntartó luxus lakóingatlanokat fejleszt prémium lokációkban...">
+Elevare Properties develops exclusive, self-sustaining, high-end residences in premium locations...
+</p>
+
+<p data-en="Each investor receives credits based on investment size and property type..."
+   data-hu="Minden befektető krediteket kap a befektetés mértéke és az ingatlan típusa alapján...">
+Each investor receives credits based on investment size and property type...
+</p>
+
+</section>
+
+<script src="script.js"></script>
 </body>
 </html>
