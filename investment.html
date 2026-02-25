@@ -2,42 +2,40 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Investment | Elevare</title>
-<style>
-body{margin:0;font-family:Arial;background:#0b0b0b;color:white;}
-.container{max-width:900px;margin:auto;padding:160px 40px;}
-input{padding:12px;margin:10px 0;width:300px;}
-button{padding:12px 25px;background:#c5a46d;border:none;color:black;}
-</style>
+<title>Investment - Elevare</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="container">
-<h1>Investment Calculator</h1>
+<header>
+<a href="index.html"><img src="logo.png" class="logo"></a>
+<nav>
+<a href="projects.html" data-en="Projects" data-hu="Projektek">Projects</a>
+<a href="investment.html" data-en="Investment" data-hu="Befektetés">Investment</a>
+<a href="concept.html" data-en="Concept" data-hu="Koncepció">Concept</a>
+<button onclick="setLang('en')">EN</button>
+<button onclick="setLang('hu')">HU</button>
+</nav>
+</header>
 
-<label>Investment (€)</label><br>
-<input type="number" id="inv"><br>
+<div class="blur-background"></div>
 
-<label>Annual Growth (%)</label><br>
-<input type="number" id="rate"><br>
+<section class="content">
 
-<label>Years</label><br>
-<input type="number" id="years"><br>
+<h2 data-en="Return on Investment Calculator"
+    data-hu="Megtérülési Kalkulátor">
+Return on Investment Calculator
+</h2>
 
-<button onclick="calc()">Calculate</button>
-
-<p id="out"></p>
+<div class="calculator">
+<input type="number" id="investment" placeholder="Investment (€)">
+<input type="number" id="returnRate" placeholder="Annual Return %">
+<button onclick="calculateROI()">Calculate</button>
+<h3 id="result"></h3>
 </div>
 
-<script>
-function calc(){
-let inv=parseFloat(document.getElementById("inv").value);
-let rate=parseFloat(document.getElementById("rate").value)/100;
-let years=parseFloat(document.getElementById("years").value);
-let future=inv*Math.pow((1+rate),years);
-document.getElementById("out").innerHTML="Projected Value: €"+future.toFixed(2);
-}
-</script>
+</section>
 
+<script src="script.js"></script>
 </body>
 </html>
