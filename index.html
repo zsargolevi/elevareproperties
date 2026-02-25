@@ -1,153 +1,53 @@
 <!DOCTYPE html>
-<html lang="hu">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Elevare Properties</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-
-<style>
-*{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'Inter',sans-serif;background:#0b0b0b;color:white;}
-
-header{
-position:fixed;
-top:0;
-width:100%;
-background:rgba(0,0,0,0.95);
-border-bottom:1px solid #1f1f1f;
-z-index:1000;
-}
-
-.header-inner{
-max-width:1300px;
-margin:auto;
-padding:20px 40px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
-
-.logo img{height:125px;}
-
-nav{display:flex;gap:35px;align-items:center;}
-nav a{text-decoration:none;color:#ddd;font-size:15px;}
-nav a:hover{color:#c5a46d;}
-
-.hero{
-margin-top:160px;
-height:100vh;
-background:url('hero.png') center/cover no-repeat;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-position:relative;
-}
-
-.hero::after{
-content:'';
-position:absolute;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.6);
-top:0;
-left:0;
-}
-
-.hero-content{
-position:relative;
-z-index:2;
-max-width:800px;
-}
-
-.hero h1{
-font-family:'Playfair Display',serif;
-font-size:56px;
-margin-bottom:20px;
-}
-
-.hero p{font-size:18px;color:#ccc;}
-
-section{padding:120px 40px;max-width:1200px;margin:auto;}
-
-h2{
-font-family:'Playfair Display',serif;
-font-size:36px;
-margin-bottom:50px;
-text-align:center;
-}
-
-.marquee{overflow:hidden;}
-.track{display:flex;animation:scroll 50s linear infinite;}
-.track img{
-height:240px;
-margin-right:25px;
-border-radius:10px;
-}
-
-@keyframes scroll{
-0%{transform:translateX(0);}
-100%{transform:translateX(-50%);}
-}
-
-footer{
-padding:60px;
-text-align:center;
-border-top:1px solid #1f1f1f;
-color:#777;
-margin-top:100px;
-}
-</style>
+    <meta charset="UTF-8">
+    <title>Elevare Properties</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
 </head>
-
-<body>
+<body class="home">
 
 <header>
-<div class="header-inner">
-<a href="index.html" class="logo">
-<img src="logo.png" alt="Elevare">
-</a>
+    <a href="index.html">
+        <img src="logo.png" class="logo">
+    </a>
 
-<nav>
-<a href="index.html">Home</a>
-<a href="concept.html">Concept</a>
-<a href="projects.html">Projects</a>
-<a href="investment.html">Investment</a>
-<a href="investor.html">Investor</a>
-</nav>
-</div>
+    <nav>
+        <a href="projects.html" data-en="Projects" data-hu="Projektek">Projects</a>
+        <a href="investment.html" data-en="Investment" data-hu="Befektetés">Investment</a>
+        <a href="concept.html" data-en="Concept" data-hu="Koncepció">Concept</a>
+        <button onclick="setLang('en')">EN</button>
+        <button onclick="setLang('hu')">HU</button>
+    </nav>
 </header>
 
 <section class="hero">
-<div class="hero-content">
-<h1>Elevated Boutique Developments</h1>
-<p>Maximum 6-unit coastal luxury residences designed for structured capital growth.</p>
-</div>
+    <img src="hero.png" class="hero-img">
+    <div class="hero-text">
+        <h1 data-en="Elevated Luxury Real Estate Investment"
+            data-hu="Magas Szintű Luxus Ingatlan Befektetés">
+            Elevated Luxury Real Estate Investment
+        </h1>
+    </div>
 </section>
 
-<section>
-<h2>Reference Portfolio</h2>
-
-<div class="marquee">
-<div class="track">
-<img src="hero.png">
-<img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511">
-<img src="https://images.unsplash.com/photo-1499793983690-e29da59ef1c2">
-<img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae">
-<img src="https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6">
-<img src="https://images.unsplash.com/photo-1494526585095-c41746248156">
-<img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb">
-<img src="hero.png">
-</div>
-</div>
-
+<section class="references">
+    <div class="slider">
+        <img src="images/ref1.jpg">
+        <img src="images/ref2.jpg">
+        <img src="images/ref3.jpg">
+        <img src="images/ref4.jpg">
+        <img src="images/ref5.jpg">
+        <img src="images/ref6.jpg">
+    </div>
 </section>
 
 <footer>
-© 2026 Elevare Properties
+    <p>info@elevareproperties.hu</p>
+    <p>Budapest, Hungary</p>
 </footer>
 
+<script src="script.js"></script>
 </body>
 </html>
